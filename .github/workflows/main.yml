@@ -29,4 +29,5 @@ jobs:
          aws-region: us-east-1
 
      - name: Deploy static site to S3 bucket
-       run: aws s3 sync ./build s3://react-s3-deploy-github-actions
+       run: aws s3 sync ./build s3://dark-mode-demo-master
+
