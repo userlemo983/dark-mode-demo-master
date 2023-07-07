@@ -17,6 +17,9 @@ jobs:
 
      - name: Install dependencies
        run: npm install
+       
+     - name: Use version 
+       run: nvm use v6.0.0
 
      - name: Build static file
        run: npm run build
