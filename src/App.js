@@ -26,7 +26,6 @@ function App() {
       <footer className="center footer">
         <Container>
             Nigth Mode Toggle Button
-          </a>
         </Container>
       </footer>
     </div>
