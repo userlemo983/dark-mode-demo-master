@@ -25,13 +25,7 @@ function App() {
 
       <footer className="center footer">
         <Container>
-          <a
-            href="https://dribbble.com/khatib"
-            target="_blank"
-            rel="noreferrer"
-            color="gray"
-          >
-            Design Inspiration from Mo(@Khatib)
+            Nigth Mode Toggle Button
           </a>
         </Container>
       </footer>
