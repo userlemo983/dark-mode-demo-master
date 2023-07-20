@@ -37,11 +37,12 @@ jobs:
      - name: Deploy static site to s3
 run: aws s3 sync ./build s3://react-s3-deploy-github-actions
 
-      - name: crete stack
-run: aws cloudformations create-stack --stack-name stack-test --template-body cloudFormationTemplates/s3Template.yml
+
+     - name: Create stack
+run: aws cloudformation create-stack --stack-name stack-test --template-body cloudFormationTemplates/s3Template.yml
 
 
-      - name: crete lambda
-run: aws cloudformations create-stack --stack-name stack-test --template-body cloudFormationTemplates/lambdaTemplate.yml
+      - name: Crete lambda
+run: aws cloudformation create-stack --stack-name stack-test --template-body cloudFormationTemplates/lambdaTemplate.yml
 
 
