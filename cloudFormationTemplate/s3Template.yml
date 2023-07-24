@@ -1,14 +1,43 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: "Simple CloudFormation Template to create an S3 bucket"
-
+Parameters:
+ BucketName:
+  Type: String
+  Default: gesb618bucket4
+  
 Resources:
-  MyS3Bucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: bucket-test-17-july
-
-Outputs:
-  BucketName:
-      Value:
-          Ref: MyS3Bucket
-            Description:cloud-s3_bucket
+ MyS3Bucket:
+  Type: AWS::S3::Bucket
+  Properties:
+   BucketName: !Ref BucketName
+   
+   NotificationConfiguration:
+    LambdaConfigurations:
+       -Event: 's3:ObjectCreated:*' 
+       Filter:
+         S3Key:
+          Rules:
+           -Name: suffix
+           Value: .txt
+       Function: !GetAtt Lambda.Arn
+       
+ Lambda:
+      Type: AWS::Lambda::Function
+      Properties:
+        FunctionName: "myLambdaFunc1"
+        Handler: lambda_function.lambda_handler
+        Role: arn:aws:iam::470185307299:role/mylambdarole1
+        Code:
+         S3Bucket: gesb618bucket3
+         S3Key: s3://gesb618bucket3/code/myLambdaFunc1.zip
+        Runtime: "python3.8"
+        Timeout: 300
+        TracingConfig:
+         Mode: Active
+         
+ S3InvokeLambdaPermission:
+   Type: AWS::Lambda::Permission 
+   Properties:
+    Action: lambda:InvokeFunction 
+    FunctionName: !Ref Lambda 
+    Principal: s3.amazonaws.com
