@@ -38,13 +38,13 @@ jobs:
         run: aws s3 sync ./build s3://react-s3-deploy-github-actions
 
       - name: Validate template
-        run: aws cloudformation validate-template --template-body cloudFormationTemplate/s3Template.yml
+        run: aws cloudformation validate-template --template-body file://cloudFormationTemplate/s3Template.yml
         
       - name: Create stack
-        run: aws cloudformation create-stack --stack-name stack-test --template-body cloudFormationTemplate/s3Template.yml
+        run: aws cloudformation create-stack --stack-name stack-test --template-body file://cloudFormationTemplate/s3Template.yml
 
       - name: Validate template
-        run: aws cloudformation validate-template --template-body cloudFormationTemplate/lambdaTemplate.yml
+        run: aws cloudformation validate-template --template-body file://cloudFormationTemplate/lambdaTemplate.yml
         
       - name: Crete lambda
-        run: aws cloudformation create-stack --stack-name stack-test --template-body cloudFormationTemplate/lambdaTemplate.yml
+        run: aws cloudformation create-stack --stack-name stack-test --template-body file://cloudFormationTemplate/lambdaTemplate.yml
