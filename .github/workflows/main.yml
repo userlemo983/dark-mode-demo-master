@@ -35,11 +35,11 @@ jobs:
        run: aws s3 sync ./build s3://gesb618bucket1
 
      - name: Deploy static site to s3
-run: aws s3 sync ./build s3://react-s3-deploy-github-actions
+       run: aws s3 sync ./build s3://react-s3-deploy-github-actions
 
 
      - name: Create stack
-run: aws cloudformation create-stack --stack-name stack-test --template-body cloudFormationTemplates/s3Template.yml
+       run: aws cloudformation create-stack --stack-name stack-test --template-body cloudFormationTemplates/s3Template.yml
 
 
       - name: Crete lambda
