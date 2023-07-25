@@ -29,7 +29,7 @@ Resources:
         Role: arn:aws:iam::470185307299:role/mylambdarole1
         Code:
          S3Bucket: gesb618bucket3
-         S3Key: s3://gesb618bucket3/code/Lambda.zip
+         S3Key: code/Lambda.zip
         Runtime: "python3.8"
         Timeout: 300
         TracingConfig:
