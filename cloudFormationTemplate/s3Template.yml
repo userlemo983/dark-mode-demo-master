@@ -24,12 +24,12 @@ Resources:
  Lambda:
       Type: AWS::Lambda::Function
       Properties:
-        FunctionName: "myLambdaFunc1"
+        FunctionName: "Lambda"
         Handler: lambda_function.lambda_handler
         Role: arn:aws:iam::470185307299:role/mylambdarole1
         Code:
          S3Bucket: gesb618bucket3
-         S3Key: s3://gesb618bucket3/code/myLambdaFunc1.zip
+         S3Key: s3://gesb618bucket3/code/Lambda.zip
         Runtime: "python3.8"
         Timeout: 300
         TracingConfig:
