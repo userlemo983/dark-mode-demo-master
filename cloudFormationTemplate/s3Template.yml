@@ -20,10 +20,4 @@ Resources:
            -Name: suffix
            Value: .txt
        Function: !GetAtt Lambda.Arn
-         
- S3InvokeLambdaPermission:
-   Type: AWS::Lambda::Permission 
-   Properties:
-    Action: lambda:InvokeFunction 
-    FunctionName: !Ref Lambda 
-    Principal: s3.amazonaws.com
+     
