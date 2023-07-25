@@ -19,7 +19,7 @@ Resources:
           Rules:
            -Name: suffix
            Value: .txt
-       Function: !GetAtt myLambdaFunc1.Arn
+       Function: !GetAtt Lambda.Arn
        
  Lambda:
       Type: AWS::Lambda::Function
@@ -39,6 +39,6 @@ Resources:
    Type: AWS::Lambda::Permission 
    Properties:
     Action: lambda:InvokeFunction 
-    FunctionName: !Ref myLambdaFunc1
+    FunctionName: !Ref Lambda
     Principal: s3.amazonaws.com
      
