@@ -41,4 +41,4 @@ jobs:
         run: aws cloudformation validate-template --template-body file://cloudFormationTemplate/s3Template.yml
         
       - name: Create stack
-        run: aws cloudformation create-stack --stack-name mystack2 --template-body file://cloudFormationTemplate/s3Template.yml
+        run: aws cloudformation create-stack --stack-name mystack1 --template-body file://cloudFormationTemplate/s3Template.yml
