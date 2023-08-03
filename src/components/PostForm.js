@@ -26,7 +26,7 @@ class PostForm extends Component {
     }
         e.preventDefault()
         console.log(this.state)
-        axios.post("https://fbblrzppld.execute-api.us-east-1.amazonaws.com/dev",this.state, {headers: headers})
+        axios.post("/dev/",this.state, {headers: headers})
         .then(response => {console.log(response)})
         .catch(error => {console.log(error)})
       }
