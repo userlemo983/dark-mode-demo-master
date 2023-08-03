@@ -21,25 +21,25 @@ class PostForm extends Component {
     submitHandler = e => {
       let headers =  {
         'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
+        'Access-Control-Allow-Origin': '/api',
+        'Access-Control-Allow-Methods': 'POST,GET'
     }
         e.preventDefault()
         console.log(this.state)
-        axios.post("https://fbblrzppld.execute-api.us-east-1.amazonaws.com/dev/",this.state, {headers: headers})
+        axios.post('/dev',this.state, {headers: headers,baseURL:'https://iq44twyhag.execute-api.us-east-1.amazonaws.com'})
         .then(response => {console.log(response)})
         .catch(error => {console.log(error)})
       }
 
   render() {
-    const {userId, user_name, prod_name, prod_desc, quantity} = this.state;
+    const {user_id, user_name, prod_name, prod_desc, quantity} = this.state;
 
     return (
       <div>
         <form onSubmit={this.submitHandler}>
             <div>
                 <label>Enter your ID :
-                    <input type='number' name = "userId" value={userId} onChange={this.changeHandler}/>
+                    <input type='number' name = "user_id" value={user_id} onChange={this.changeHandler}/>
                 </label>
             </div>
             <div>
