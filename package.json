@@ -2,7 +2,7 @@
   "name": "custom-view",
   "version": "0.1.0",
   "private": true,
-  "proxy": https://fbblrzppld.execute-api.us-east-1.amazonaws.com,
+  "proxy": "https://fbblrzppld.execute-api.us-east-1.amazonaws.com",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@testing-library/jest-dom": "^5.11.4",
