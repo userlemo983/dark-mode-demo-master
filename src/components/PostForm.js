@@ -19,14 +19,9 @@ class PostForm extends Component {
       }
     
     submitHandler = e => {
-      let headers =  {
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Origin': '/api',
-        'Access-Control-Allow-Methods': 'POST,GET'
-    }
         e.preventDefault()
         console.log(this.state)
-        axios.post('/dev',this.state, {headers: headers,baseURL:'https://iq44twyhag.execute-api.us-east-1.amazonaws.com'})
+        axios.post('https://iq44twyhag.execute-api.us-east-1.amazonaws.com/dev',this.state)
         .then(response => {console.log(response)})
         .catch(error => {console.log(error)})
       }
